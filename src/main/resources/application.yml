@@ -1,0 +1,15 @@
+server:
+  port: 9001
+
+spring:
+  application:
+    name: user-service
+eureka:
+  client:
+    # eureka 서버가 주기적으로 정보를 갱신 -> true이면 갱신된 정보를 받는다는 의미
+    register-with-eureka: true
+    fetch-registry: true
+    service-url:
+      defalutZone: http://127.0.0.1:8761/eureka
+
+
