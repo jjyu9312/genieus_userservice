@@ -1,10 +1,13 @@
 server:
-  port: 9001
+  port: 0
 
 spring:
   application:
     name: user-service
 eureka:
+  instance:
+    # instance 중복을 제거하기 위한 id 부여
+    instance-id: ${spring.cloud.client.hostname}:${spring.application.instance_id:${random.value}}
   client:
     # eureka 서버가 주기적으로 정보를 갱신 -> true이면 갱신된 정보를 받는다는 의미
     register-with-eureka: true
