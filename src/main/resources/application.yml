@@ -4,6 +4,12 @@ server:
 spring:
   application:
     name: user-service
+    h2:
+      console:
+        enabled: true
+        settings:
+          web-allow-others: true
+        path: /h2-console
 eureka:
   instance:
     # instance 중복을 제거하기 위한 id 부여
@@ -15,4 +21,6 @@ eureka:
     service-url:
       defalutZone: http://127.0.0.1:8761/eureka
 
+greeting:
+  message: Welcome to the Simple E-commerce.
 
